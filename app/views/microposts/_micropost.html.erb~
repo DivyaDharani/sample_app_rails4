@@ -17,7 +17,7 @@
 	<div>
 	<font color="darkviolet"><%=likes(micropost.id)%></font>
 	
-	<font color="steelblue"><%=unlikes(micropost.id)%></font>
+	<font color="seagreen"><%=unlikes(micropost.id)%></font>
 	</div>
 	
 </li>
