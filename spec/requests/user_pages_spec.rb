@@ -8,7 +8,7 @@ describe "signup page" do
 	before {visit signup_path}
 	
 	it { should have_selector('h1', text: 'Sign up') }
-	it { should have_title(text: 'Sign up') }
+	it { should have_title('Sign up') }
 end
 
 describe "profile page" do
@@ -21,7 +21,7 @@ describe "profile page" do
 	end
 	
 	it {should have_selector('h1', text: user.name)}
-	it {should have_title(text: user.name)}
+	it {should have_title(user.name)}
 end
 
 describe "signup" do
@@ -58,7 +58,7 @@ describe "edit" do
     end
     describe "page" do
       it { should have_selector('h1',    text: "Update your profile") }
-      it { should have_title(text: "Edit user") }
+      it { should have_title("Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
@@ -78,7 +78,7 @@ describe "edit" do
         click_button "Save changes"
       end
 
-      it { should have_title(text: new_name) }
+      it { should have_title(new_name) }
       it { should have_selector('div.alert.alert-success') }
       it { should have_link('Sign out', href: signout_path) }
       specify { user.reload.name.should  == new_name }
@@ -94,7 +94,7 @@ describe "edit" do
       visit users_path
     end
 
-    it { should have_title(text: 'All users') }
+    it { should have_title('All users') }
     it { should have_selector('h1',    text: 'All users') }
 
     describe "pagination" do
@@ -146,7 +146,7 @@ describe "edit" do
 	end
 
     it { should have_selector('h1',    text: user.name) }
-    it { should have_title(text: user.name) }
+    it { should have_title(user.name) }
 
     describe "microposts" do
       it { should have_content(m1.content) }
@@ -216,7 +216,7 @@ describe "edit" do
         visit following_user_path(user)
       end
 
-      it { should have_title(text: full_title('Following')) }
+      it { should have_title(full_title('Following')) }
       it { should have_selector('h3', text: 'Following') }
       it { should have_link(other_user.name, href: user_path(other_user)) }
     end
@@ -227,7 +227,7 @@ describe "edit" do
         visit followers_user_path(other_user)
       end
 
-      it { should have_title(text: full_title('Followers')) }
+      it { should have_title(full_title('Followers')) }
       it { should have_selector('h3', text: 'Followers') }
       it { should have_link(user.name, href: user_path(user)) }
     end

@@ -35,7 +35,4 @@ class LikesctrlController < ApplicationController
 	flash[:error] = "Already done!"
       	redirect_to :back
   end
-  def like_params
-      params.require(:like).permit(:like_or_unlike, :micropost_id, :user_id)
-  end
 end
